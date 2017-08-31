@@ -16,6 +16,7 @@
 		C5531E2F1F57C86E00325703 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5531E2E1F57C86E00325703 /* Utilities.swift */; };
 		C5531E381F57CBF400325703 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5531E371F57CBF400325703 /* PostCell.swift */; };
 		C5531E3A1F57CF1100325703 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5531E391F57CF1100325703 /* Post.swift */; };
+		C5531E3C1F57D5A100325703 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5531E3B1F57D5A100325703 /* WebServiceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C5531E2E1F57C86E00325703 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = uTunes/Utilities.swift; sourceTree = "<group>"; };
 		C5531E371F57CBF400325703 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		C5531E391F57CF1100325703 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		C5531E3B1F57D5A100325703 /* WebServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				C5531E2E1F57C86E00325703 /* Utilities.swift */,
+				C5531E3B1F57D5A100325703 /* WebServiceManager.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5531E2D1F57C7BC00325703 /* PostViewController.swift in Sources */,
+				C5531E3C1F57D5A100325703 /* WebServiceManager.swift in Sources */,
 				C5531E2B1F57C63100325703 /* PostsViewController.swift in Sources */,
 				C5531E2F1F57C86E00325703 /* Utilities.swift in Sources */,
 				C5531E3A1F57CF1100325703 /* Post.swift in Sources */,
