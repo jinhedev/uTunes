@@ -11,6 +11,11 @@
 		C5531E1E1F57C4AA00325703 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5531E1C1F57C4AA00325703 /* Main.storyboard */; };
 		C5531E201F57C4AA00325703 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5531E1F1F57C4AA00325703 /* Assets.xcassets */; };
 		C5531E231F57C4AA00325703 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5531E211F57C4AA00325703 /* LaunchScreen.storyboard */; };
+		C5531E2B1F57C63100325703 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5531E2A1F57C63100325703 /* PostsViewController.swift */; };
+		C5531E2D1F57C7BC00325703 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5531E2C1F57C7BC00325703 /* PostViewController.swift */; };
+		C5531E2F1F57C86E00325703 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5531E2E1F57C86E00325703 /* Utilities.swift */; };
+		C5531E381F57CBF400325703 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5531E371F57CBF400325703 /* PostCell.swift */; };
+		C5531E3A1F57CF1100325703 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5531E391F57CF1100325703 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,11 @@
 		C5531E1F1F57C4AA00325703 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5531E221F57C4AA00325703 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5531E241F57C4AA00325703 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5531E2A1F57C63100325703 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		C5531E2C1F57C7BC00325703 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		C5531E2E1F57C86E00325703 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = uTunes/Utilities.swift; sourceTree = "<group>"; };
+		C5531E371F57CBF400325703 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		C5531E391F57CF1100325703 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,7 +46,9 @@
 		C5531E0C1F57C4AA00325703 = {
 			isa = PBXGroup;
 			children = (
-				C5531E171F57C4AA00325703 /* uTunes */,
+				C5531E301F57C8B500325703 /* Shared */,
+				C5531E171F57C4AA00325703 /* uTunes iOS */,
+				C5531E311F57C8C500325703 /* uTunes macOS */,
 				C5531E161F57C4AA00325703 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,16 +61,76 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C5531E171F57C4AA00325703 /* uTunes */ = {
+		C5531E171F57C4AA00325703 /* uTunes iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C5531E361F57C91C00325703 /* Models */,
+				C5531E351F57C91600325703 /* Views */,
+				C5531E321F57C8F000325703 /* Controllers */,
+				C5531E331F57C8FE00325703 /* Storyboards */,
+				C5531E341F57C90800325703 /* Supporting Files */,
+			);
+			name = "uTunes iOS";
+			path = uTunes;
+			sourceTree = "<group>";
+		};
+		C5531E301F57C8B500325703 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C5531E2E1F57C86E00325703 /* Utilities.swift */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		C5531E311F57C8C500325703 /* uTunes macOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "uTunes macOS";
+			sourceTree = "<group>";
+		};
+		C5531E321F57C8F000325703 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				C5531E181F57C4AA00325703 /* AppDelegate.swift */,
+				C5531E2A1F57C63100325703 /* PostsViewController.swift */,
+				C5531E2C1F57C7BC00325703 /* PostViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C5531E331F57C8FE00325703 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
 				C5531E1C1F57C4AA00325703 /* Main.storyboard */,
-				C5531E1F1F57C4AA00325703 /* Assets.xcassets */,
 				C5531E211F57C4AA00325703 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		C5531E341F57C90800325703 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C5531E1F1F57C4AA00325703 /* Assets.xcassets */,
 				C5531E241F57C4AA00325703 /* Info.plist */,
 			);
-			path = uTunes;
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C5531E351F57C91600325703 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C5531E371F57CBF400325703 /* PostCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		C5531E361F57C91C00325703 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C5531E391F57CF1100325703 /* Post.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,7 +206,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5531E2D1F57C7BC00325703 /* PostViewController.swift in Sources */,
+				C5531E2B1F57C63100325703 /* PostsViewController.swift in Sources */,
+				C5531E2F1F57C86E00325703 /* Utilities.swift in Sources */,
+				C5531E3A1F57CF1100325703 /* Post.swift in Sources */,
 				C5531E191F57C4AA00325703 /* AppDelegate.swift in Sources */,
+				C5531E381F57CBF400325703 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
