@@ -46,7 +46,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Rt-zC-g1e">
                                                             <rect key="frame" x="0.0" y="24" width="132.5" height="93"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WOL-G0-nSe">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WOL-G0-nSe" customClass="CustomUIImageView" customModule="uTunes" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="24.5" width="44" height="44"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
@@ -89,7 +89,7 @@
                                             <outlet property="postImageView" destination="WOL-G0-nSe" id="2TR-jg-UoC"/>
                                             <outlet property="subTitleLabel" destination="IUK-Aj-dlF" id="1Tl-At-M61"/>
                                             <outlet property="titleLabel" destination="8ws-Oi-WPI" id="5iz-k1-iwE"/>
-                                            <segue destination="hA1-dM-JyV" kind="show" id="K2J-1w-p3y">
+                                            <segue destination="hA1-dM-JyV" kind="show" identifier="seguePostCellToPostVC" id="K2J-1w-p3y">
                                                 <segue key="commit" inheritsFrom="parent" id="iDT-2t-Zub"/>
                                                 <segue key="preview" inheritsFrom="commit" id="Ukd-kz-M52"/>
                                             </segue>
@@ -130,12 +130,62 @@
                     <view key="view" contentMode="scaleToFill" id="exi-OH-rWp">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SVY-Cd-RPF">
+                                <rect key="frame" x="16" y="8" width="343" height="102.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="trackNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hdp-6H-txK">
+                                        <rect key="frame" x="109" y="0.0" width="125.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="TiS-6D-umn">
+                                        <rect key="frame" x="119.5" y="36.5" width="104" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p92-9A-Dzh">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="Play">
+                                                    <color key="titleColor" red="0.34117648010000001" green="0.62352943419999995" blue="0.16862745579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="handlePlay:" destination="hA1-dM-JyV" eventType="touchUpInside" id="bCI-Rs-Ddr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wH-7K-b1k">
+                                                <rect key="frame" x="62" y="0.0" width="42" height="30"/>
+                                                <state key="normal" title="Pause">
+                                                    <color key="titleColor" red="0.93725490570000003" green="0.34901961679999999" blue="0.1921568662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="handlePause:" destination="hA1-dM-JyV" eventType="touchUpInside" id="5UD-re-BLA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="U4n-gn-JBu">
+                                        <rect key="frame" x="161.5" y="82.5" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SVY-Cd-RPF" firstAttribute="top" secondItem="xVz-q9-xWX" secondAttribute="bottom" constant="8" id="6bl-A8-L8l"/>
+                            <constraint firstItem="SVY-Cd-RPF" firstAttribute="leading" secondItem="exi-OH-rWp" secondAttribute="leading" constant="16" id="KUw-e3-stC"/>
+                            <constraint firstAttribute="trailing" secondItem="SVY-Cd-RPF" secondAttribute="trailing" constant="16" id="ghx-ps-XtW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="U4n-gn-JBu" id="WqX-W5-dWA"/>
+                        <outlet property="pauseButton" destination="3wH-7K-b1k" id="1cI-PB-JJ6"/>
+                        <outlet property="playButton" destination="p92-9A-Dzh" id="PeC-Mh-bTf"/>
+                        <outlet property="trackNameLabel" destination="Hdp-6H-txK" id="nST-QQ-KNa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iVZ-dc-Kbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3132" y="-125"/>
+            <point key="canvasLocation" x="3132" y="-125.4872563718141"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kGI-MZ-wHa">
@@ -143,9 +193,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H2E-cg-rTr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="sS7-NM-M3T"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="MLX-E4-rAz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="MLX-E4-rAz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -166,10 +217,12 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2rL-wi-n2c" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="XNa-cb-Ysz">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.93725490570000003" green="0.34901961679999999" blue="0.1921568662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.93725490570000003" green="0.34901961679999999" blue="0.1921568662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="H2E-cg-rTr" kind="relationship" relationship="viewControllers" id="xJS-No-a4H"/>

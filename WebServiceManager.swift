@@ -33,7 +33,7 @@ class WebServiceManager: NSObject {
         if params != nil {
             var body = String()
             for (key, value) in params! {
-                body.append("\(key)=\(value)&")
+                body.append("\(key)=\(value)")
             }
             request.httpBody = body.data(using: String.Encoding.utf8)
         }
@@ -60,11 +60,11 @@ struct WebServiceConfigurations {
     static let baseURL = "https://itunes.apple.com"
 
     struct endpoint {
-        static let search = "/search"
+        static let search = "/search?term="
     }
 
     struct param {
-        static let term = "term"
+        // implement this
     }
 
     struct httpMethod {
